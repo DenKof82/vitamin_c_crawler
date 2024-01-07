@@ -1,7 +1,5 @@
 import os
 from unittest.mock import patch, MagicMock
-
-from Vitamin_C_crawler.vitamin_c_crawler.main import crawl_vitamin_c_products
 import pandas as pd
 import pytest
 
