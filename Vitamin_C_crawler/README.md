@@ -11,7 +11,7 @@
 
 ## Quick Start Guide
 ### Prerequisites
-- Ensure you are using Python 3.10 or newer.
+- Ensure you are using Python 3.10 or newer. 
 - Have `poetry` installed for dependency management.
 
 ## Installation
