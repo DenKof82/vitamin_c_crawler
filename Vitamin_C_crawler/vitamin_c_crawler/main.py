@@ -82,7 +82,8 @@ def crawl_vitamin_c_products(time_limit, source, download_images=True):
     return data  # Return the DataFrame
 
 # Example function call with parameters from the config file
-crawl_vitamin_c_products(
+if __name__ == '__main__':
+    crawl_vitamin_c_products(
     time_limit=config.TIME_LIMIT,
     source=config.SOURCE_URL,
     download_images=config.DOWNLOAD_IMAGES
