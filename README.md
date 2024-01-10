@@ -55,7 +55,7 @@ if __name__ == '__main__':
     )
 ```
 
-For more examples look in the [examples](./examples) directory.
+For more examples look in the [examples](Vitamin_C_crawler/examples) directory.
 
 
 ## License
