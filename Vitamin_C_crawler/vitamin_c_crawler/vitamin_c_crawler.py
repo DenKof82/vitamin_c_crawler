@@ -1,12 +1,13 @@
+# vitamin_c_crawler.py
+
 # Import necessary libraries
-import requests  # For making HTTP requests
-from lxml import html as HTML  # For parsing HTML
-import time  # For tracking the time limit
-import os  # For file path operations
-import pandas as pd  # For data manipulation and saving as CSV
+import requests
+from lxml import html as HTML
+import time
+import os
+import pandas as pd
 import config  # Importing configuration settings
 
-# Function to download images
 def download_image(image_url, folder_path, file_name):
     try:
         response = requests.get(image_url)  # Send a GET request to the image URL
@@ -17,9 +18,8 @@ def download_image(image_url, folder_path, file_name):
             return file_path  # Return the file path where the image is saved
     except Exception as e:
         print(f"Error downloading image: {e}")  # Print any errors encountered
-    return None  # Return None if the download was unsuccessful
+    return None
 
-# Function to crawl and extract product data
 def crawl_vitamin_c_products(time_limit, source, download_images=True):
     start_time = time.time()  # Record the start time
     data = pd.DataFrame(columns=['Product Name', 'Price', 'Image URL', 'Image Path'])  # Initialize a DataFrame
@@ -81,10 +81,4 @@ def crawl_vitamin_c_products(time_limit, source, download_images=True):
 
     return data  # Return the DataFrame
 
-# Example function call with parameters from the config file
-if __name__ == '__main__':
-    crawl_vitamin_c_products(
-    time_limit=config.TIME_LIMIT,
-    source=config.SOURCE_URL,
-    download_images=config.DOWNLOAD_IMAGES
-    )
+

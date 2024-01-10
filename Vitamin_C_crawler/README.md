@@ -44,19 +44,15 @@ poetry install
 ### As a module
 
 ```python
-from vitamin_c_crawler import crawl_vitamin_c_products
+import vitamin_c_crawler as vc_crawler
+import config  # Ensure this script also has access to config
 
-print(crawl_vitamin_c_products(
-    time_limit=config.TIME_LIMIT,
-    source=config.SOURCE_URL,
-    download_images=config.DOWNLOAD_IMAGES
-))
-# 
-SOURCE_URL = "https://www.gintarine.lt/search?q=vitaminas+c"
-RETURN_FORMAT = 'csv'
-DOWNLOAD_IMAGES = True
-IMAGE_FOLDER = 'downloaded_images'
-CSV_FILE_PATH = 'vitamin_c_products.csv'
+if __name__ == '__main__':
+    vc_crawler.crawl_vitamin_c_products(
+        time_limit=config.TIME_LIMIT,
+        source=config.SOURCE_URL,
+        download_images=config.DOWNLOAD_IMAGES
+    )
 ```
 
 For more examples look in the [examples](./examples) directory.
